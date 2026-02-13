@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Manager App</title>
+    <link rel="stylesheet" href="style.css"> 
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="logo.png" alt="Hotel Logo">
+        <span>Hotel Highway Memories</span>
+    </div>
+    <ul>
+        <li><a href="#addBooking">Add Booking</a></li>
+        <li><a href="#bookings" onclick="goToBookings()">Bookings</a></li>
+    </ul>
+    <div class="welcome-user" style="padding: 10px; text-align: right;">
+        <span id="welcomeMessage"></span>
+        <button onclick="logout()" style="margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+<div class="slideshow-container">
+    <img src="image1.webp" class="slide" style="display: block;">
+    <img src="image2.webp" class="slide">
+    <img src="image3.webp" class="slide">
+    <!-- Add more images if you want -->
+</div>
+
+<section id="addBooking" class="section">
+    <h2>Add New Booking</h2>
+    <form id="bookingForm">
+        <input type="text" id="ownerName" placeholder="Owner Name" required>
+        <input type="text" id="contact" placeholder="Contact Number" required pattern="\d{10}" title="Please enter exactly 10 digits">
+        <input type="number" id="rooms" placeholder="No. of Rooms" required>
+        <input type="text" id="location" placeholder="Location" required>
+
+        <!-- New: From Date and To Date -->
+        <label>From Date:</label>
+        <input type="date" id="fromDate" required>
+
+        <label>To Date:</label>
+        <input type="date" id="toDate" required>
+
+        <textarea id="notes" placeholder="Notes (optional)"></textarea>
+        <button type="submit">Add Booking</button>
+    </form>
+</section>
+
+<section id="bookings" class="section">
+    <h2>Bookings</h2>
+    <!-- Search Section -->
+    <input type="text" id="searchInput" placeholder="Search by Owner or Date" oninput="searchBookings()">
+    <button onclick="searchBookings()" class="search-btn">Search</button>
+    <div id="bookingList"></div>
+    <div class="action-buttons">
+        <button onclick="deleteSelectedBookings()" class="delete-btn">Delete Selected</button>
+        <button onclick="download()" class="download-btn ">download</button>
+        <button onclick="clearAllBookings()" class="clear-btn">Clear All Bookings</button>
+        <button onclick="downloadBookings()" class="download-btn">Download All Bookings</button>
+    </div>
+</section>
+
+<section id="bookings" class="section">
+    <h2>Total Bookings: <span id="totalBookings">0</span></h2>
+</section>
+
+<!-- Edit Popup Modal -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h2>Edit Booking</h2>
+        <form id="editBookingForm">
+  <input type="text" id="editOwnerName" placeholder="Owner Name" required>
+  <input type="text" id="editContact" placeholder="Contact" required pattern="\d{10}" title="Please enter exactly 10 digits">
+  <input type="number" id="editRooms" placeholder="No. of Rooms" required>
+  <input type="text" id="editLocation" placeholder="Location" required>
+
+  <label>From Date:</label>
+  <input type="date" id="editFromDate" required>
+
+  <label>To Date:</label>
+  <input type="date" id="editToDate" required>
+
+  <textarea id="editNotes" placeholder="Notes (optional)"></textarea>
+
+  <button type="submit">Save Changes</button>
+</form>
+
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <p>Thank you for using Room Booking App Sir 🙏🏻!</p>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

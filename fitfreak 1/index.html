@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+< lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+    <span class="chatbot-icon" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+    </span>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header">FitFreak Chatbot <span onclick="toggleChat()">✖</span></div>
+        <div class="chatbox" id="chatbox"></div>
+        <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="sendMessage(event)">
+    </div>
+
+    <script src="script.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>FitFreak</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="#"><img src="assets/logo.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="#">Home</a></li>
+        <li class="link"><a href="#">Program</a></li>
+        <li class="link"><a href="#">Service</a></li>
+        <li class="link"><a href="#">About</a></li>
+        <li class="link"><a href="#">Community</a></li>
+      </ul>
+      
+      <button class="btn" onclick="openLoginPopup()">Join Now</button>
+
+<!-- Login Popup (Initially Hidden) -->
+<div id="loginPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeLoginPopup()">&times;</span>
+        <h2>Login to Your Account</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+</div>
+
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>Transform. Train. Triumph </h4>
+        <h1><span>Empowering</span>  Every Generation Towards Fitness Success</h1>
+        <p>
+          Unleash your potential and embark on a journey towards a stronger,
+          fitter, and more confident you. Sign up for 'Make Your Body Shape' now
+          and witness the incredible transformation your body is capable of!
+        </p>
+        <button class="btn">Get Started</button>
+      </div>
+      <div class="header__image">
+        <img src="assets/header.png" alt="header" />
+      </div>
+    </header>
+
+    <section class="section__container explore__container">
+      <div class="explore__header">
+        <h2 class="section__header">EXPLORE OUR PROGRAM</h2>
+        
+      </div>
+      <div class="explore__grid">
+        <div class="explore__card">
+          <span><i class="ri-boxing-fill"></i></span>
+          <h4>Strength</h4>
+          <p>
+            Embrace the essence of strength as we delve into its various
+            dimensions physical, mental, and emotional.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-heart-pulse-fill"></i></span>
+          <h4>Physical Fitness</h4>
+          <p>
+            It encompasses a range of activities that improve health, strength,
+            flexibility, and overall well-being.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-run-line"></i></span>
+          <h4>Fat Lose</h4>
+          <p>
+            Through a combination of workout routines and expert guidance, we'll
+            empower you to reach your goals.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-shopping-basket-fill"></i></span>
+          <h4>Weight Gain</h4>
+          <p>
+            Designed for individuals, our program offers an effective approach
+            to gaining weight in a sustainable manner.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-heart-pulse-fill"></i></span>
+          <h4>Health Monitoring</h4>
+          <p>
+            Designed for individuals, our health monitoring system provides a comprehensive and effective approach to tracking your wellness
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="fa-solid fa-spa"></i></span>
+          <h4>YOGA & MEDITATION</h4>
+          <p>
+            Experience the power of Yoga & Meditation with our expert-led classes designed for all fitness levels. Improve flexibility, strength, and mental well-being.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="fa-solid fa-chalkboard-teacher"></i></span>
+          <h4>SEMINARS</h4>
+          <p>
+            Join our exclusive fitness seminars led by industry experts, trainers, and health professionals to gain in-depth knowledge on various aspects of fitness, nutrition, and wellness.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container class__container">
+      <div class="class__image">
+        <span class="bg__blur"></span>
+        <img src="assets/class-1.jpg" alt="class" class="class__img-1" />
+        <img src="assets/class-5.jpg" alt="class" class="class__img-2" />
+      </div>
+      <div class="class__content">
+        <h2 class="section__header">Get Fit with Personalized Training Plans</h2>
+        <p>
+          Led by our team of expert and motivational instructors, "The Class You
+          Will Get Here" is a high-energy, results-driven session that combines
+          a perfect blend of cardio, strength training, and functional
+          exercises.
+        </p>
+        <button class="btn">Book A Class</button>
+      </div>
+    </section>
+    <section class="section__container class__container">
+      <div class="class__image">
+        <span class="bg__blur"></span>
+        <img src="assets/class-3.jpg" alt="class" class="class__img-1" />
+        <img src="assets/class-4.webp" alt="class" class="class__img-2" />
+      </div>
+      <div class="class__content">
+        <h2 class="section__header">GET YOUR DIET PLAN</h2>
+        <p>
+          Our Nutritional Diet Plans are designed to cater to various health goals, including weight loss, muscle gain, and overall wellness. From the Mediterranean Diet, known for heart health benefits, to the Keto Diet, which promotes fat loss, our plans provide a balanced approach to nutrition. 
+        </p>
+        <button class="btn">Book A DIET PLAN</button>
+      </div>
+    </section>
+    
+
+    <section class="section__container join__container">
+      <h2 class="section__header">WHY JOIN US ?</h2>
+      <p class="section__subheader">
+        Our diverse membership base creates a friendly and supportive
+        atmosphere, where you can make friends and stay motivated.
+      </p>
+      <div class="join__image">
+        <img src="assets/join.jpg" alt="Join" />
+        <div class="join__grid">
+          <div class="join__card">
+            <span><i class="ri-user-star-fill"></i></span>
+            <div class="join__card__content">
+              <h4>Personal Trainer</h4>
+              <p>Unlock your potential with our expert Personal Trainers.</p>
+            </div>
+          </div>
+          <div class="join__card">
+            <span><i class="ri-vidicon-fill"></i></span>
+            <div class="join__card__content">
+              <h4>Practice Sessions</h4>
+              <p>Elevate your fitness with practice sessions.</p>
+            </div>
+          </div>
+          <div class="join__card">
+            <span><i class="ri-building-line"></i></span>
+            <div class="join__card__content">
+              <h4>Good Management</h4>
+              <p>Supportive management, for your fitness success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container price__container">
+      <h2 class="section__header">OUR PRICING PLAN</h2>
+      <p class="section__subheader">
+        Our pricing plan comes with various membership tiers, each tailored to
+        cater to different preferences and fitness aspirations.
+      </p>
+      <div class="price__grid">
+        <div class="price__card">
+          <div class="price__card__content">
+            <h4>Basic Plan</h4>
+            <h3>$9</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Smart workout plan
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              At home workouts
+            </p>
+          </div>
+          <button class="btn price__btn">Join Now</button>
+        </div>
+        <div class="price__card">
+          <div class="price__card__content">
+            <h4>Weekly Plan</h4>
+            <h3>$19</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              PRO Gyms
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Smart workout plan
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              At home workouts
+            </p>
+          </div>
+          <button class="btn price__btn">Join Now</button>
+        </div>
+        <div class="price__card">
+          <div class="price__card__content">
+            <h4>Monthly Plan</h4>
+            <h3>$35</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              ELITE Gyms & Classes
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              PRO Gyms
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Smart workout plan
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              At home workouts
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Personal Training
+            </p>
+          </div>
+          <button class="btn price__btn">Join Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="review">
+      <div class="section__container review__container">
+    
+        <div class="review__content active">
+          <span><i class="ri-double-quotes-r"></i></span>
+          <h4>MEMBER REVIEW</h4>
+          <p>
+            What truly sets this gym apart is their expert team of trainers. They are knowledgeable, approachable, and genuinely invested in helping members.
+          </p>
+          <div class="review__rating">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-half-fill"></i></span>
+          </div>
+          <div class="review__footer">
+            <div class="review__member">
+              <img src="assets/member.jpg" alt="member" />
+              <div class="review__member__details">
+                <h4>Abhay Soni</h4>
+                <p>Student</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="review__content">
+          <span><i class="ri-double-quotes-r"></i></span>
+          <h4>MEMBER REVIEW</h4>
+          <p>
+            The facilities are top-notch, and the trainers are fantastic. I have seen amazing results in just three months of training here!
+          </p>
+          <div class="review__rating">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+          </div>
+          <div class="review__footer">
+            <div class="review__member">
+              <img src="assets/member-1.jpg" alt="member" />
+              <div class="review__member__details">
+                <h4>Priya Sharma</h4>
+                <p>Software Engineer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="review__content">
+          <span><i class="ri-double-quotes-r"></i></span>
+          <h4>MEMBER REVIEW</h4>
+          <p>
+            This gym is amazing! The staff is super friendly and always ready to help. Highly recommend their personalized training programs.
+          </p>
+          <div class="review__rating">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-line"></i></span>
+          </div>
+          <div class="review__footer">
+            <div class="review__member">
+              <img src="assets/member-2.jpg" alt="member" />
+              <div class="review__member__details">
+                <h4>Rahul Verma</h4>
+                <p>Entrepreneur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="review__nav">
+          <span id="prev-review"><i class="ri-arrow-left-line"></i></span>
+          <span id="next-review"><i class="ri-arrow-right-line"></i></span>
+        </div>
+    
+      </div>
+    </section>
+    
+
+    <footer class="section__container footer__container">
+      <span class="bg__blur"></span>
+      <span class="bg__blur footer__blur"></span>
+      <div class="footer__col">
+        <div class="footer__logo"><img src="assets/logo.png" alt="logo" /></div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">Business</a>
+        <a href="#">Franchise</a>
+        <a href="#">Partnership</a>
+        <a href="#">Network</a>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <a href="#">Blogs</a>
+        <a href="#">Security</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">BMI Calculator</a>
+      </div>
+        </div>
+      </footer>
+      
+    </footer>
+    <div class="footer__bar">
+      Designed by Abhay and team. All rights reserved.
+    </div>
+  </body>
+</html>
